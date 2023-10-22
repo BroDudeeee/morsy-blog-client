@@ -3,6 +3,38 @@
   margin: 80px auto;
 }
 
+.loading {
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading h3 {
+  font-size: 3rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.loadMoreBtn {
+  background-color: rgb(230, 228, 228);
+  padding: 9px;
+  cursor: pointer;
+  font-size: larger;
+  border: 2px solid black;
+  flex: 0.6;
+}
+
+.loadMoreBtn:hover {
+  background-color: black;
+  color: white;
+}
+
 @media screen and (max-width: 800px) {
   .posts {
     width: 80vw;

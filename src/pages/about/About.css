@@ -1,0 +1,51 @@
+.about {
+  width: 50vw;
+  margin: 0 auto 30px auto;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.aboutImg {
+  width: 300px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.aboutParagraph {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutParagraph h3 {
+  margin: 20px 0;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutParagraph p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about .link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: rgb(92, 91, 91);
+  margin: 30px 0;
+}
+
+.homeLink {
+  font-weight: lighter;
+  font-size: 1.8rem;
+}
