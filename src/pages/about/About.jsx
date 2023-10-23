@@ -1,5 +1,6 @@
 import "./About.css";
 import { Link } from "react-router-dom";
+import img from "../../assets/aboutMe.jpeg";
 
 const About = () => {
   return (
@@ -9,7 +10,7 @@ const About = () => {
       </Link>
       <section>
         <section className="imgContainer">
-          <img src="/aboutMe.jpeg" alt="me" className="aboutImg" />
+          <img src={img} alt="me" className="aboutImg" />
         </section>
 
         <section className="aboutParagraph">
