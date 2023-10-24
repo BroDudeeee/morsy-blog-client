@@ -19,9 +19,10 @@ const About = () => {
             i'm your host, Ahmed Morsi, Software engineer, I built this blog
             pretty much for selfish reasons that is i found my self doing a lot
             of things and losing track of them so i decided to built this blog
-            just to keep track of my learnings and make it as an archive to get
-            back to it whenever i needed, but it is gonna be great if somebody
-            found anything interesting in this site
+            to keep notes to remind myself of what i learned so i can keep track
+            of my learnings and make it as an archive to get back to it whenever
+            i needed, but it is gonna be great if somebody found anything
+            interesting in this site
           </p>
         </section>
       </section>
