@@ -2,16 +2,21 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import "./SinglePost.css";
 
-const SinglePost = ({ _id, title, body, createdAt }) => {
+const SinglePost = ({ _id, title, body, createdAt, category, image }) => {
   return (
-    <article className="singlePost">
+    <article className="singlePostContainer">
       <Link to={`post/${_id}`} className="link">
-        <h3 className="title">{title}</h3>
-        <p className="body">
-          {body.length > 200 ? `${body.slice(0, 200)}....` : body}
-        </p>
+        <section className="singlePost">
+          {image && <img src={image} alt={title} className="postImg" />}
+          <section className="postTitleBody">
+            {category && <span className="category">#{category}</span>}
+            <h3 className="title">{title}</h3>
+            <span className="date">
+              {moment(createdAt).format(`MMMM DD, YYYY`)}
+            </span>
+          </section>
+        </section>
       </Link>
-      <span className="date">{moment(createdAt).format(`MMMM DD, YYYY`)}</span>
     </article>
   );
 };

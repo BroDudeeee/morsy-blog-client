@@ -35,6 +35,7 @@ const Posts = () => {
       {posts.map((post) => (
         <SinglePost key={post._id} {...post} />
       ))}
+
       <div className="loadMore">
         <button className="loadMoreBtn" onClick={() => setPageNum(pageNum + 1)}>
           Load More Articles

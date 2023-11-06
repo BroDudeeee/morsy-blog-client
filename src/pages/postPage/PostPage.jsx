@@ -3,6 +3,7 @@ import axios from "axios";
 import "./PostPage.css";
 import { useParams } from "react-router-dom";
 import moment from "moment";
+import Header from "../../components/header/Header";
 
 const PostPage = () => {
   const { postId } = useParams();
@@ -11,6 +12,7 @@ const PostPage = () => {
     body: "",
     createdAt: "",
     category: "",
+    image: "",
   });
   const [isLoading, setIsLoading] = useState(true);
 
@@ -20,10 +22,11 @@ const PostPage = () => {
         `${import.meta.env.VITE_SERVER_URL}api/posts/post/${postId}`
       );
       const data = await res.data;
-      const { title, body, createdAt, category } = data;
+      const { title, body, image, createdAt, category } = data;
       setPost({
         title,
         body,
+        image,
         createdAt,
         category,
       });
@@ -38,21 +41,29 @@ const PostPage = () => {
         <h3>Loading...</h3>
       </div>
     );
-
+  console.log(post);
   return (
-    <article className="postPage">
-      <span className="date">
-        {moment(post.createdAt).format(`MMMM DD, YYYY`).toUpperCase()}{" "}
-      </span>
-      {post.category && (
-        <>
-          / <span className="category">#{post.category.toUpperCase()}</span>
-        </>
-      )}
-
-      <h3 className="title">{post.title}</h3>
-      <p className="body">{post.body}</p>
-    </article>
+    <>
+      <Header />
+      <article className="postPage">
+        <section className="dateCategory">
+          <span className="postDate">
+            {moment(post.createdAt).format(`MMMM DD, YYYY`).toUpperCase()}{" "}
+          </span>
+          {post.category && (
+            <>
+              / <span className="category">#{post.category.toUpperCase()}</span>
+            </>
+          )}
+        </section>
+        <h3 className="postPageTitle">{post.title}</h3>
+        <img src={post.image} alt={post.title} className="postPageImg" />
+        <p
+          className="postPageBody"
+          dangerouslySetInnerHTML={{ __html: post.body }}
+        />
+      </article>
+    </>
   );
 };
 

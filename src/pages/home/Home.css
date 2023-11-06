@@ -1,2 +1,11 @@
-.home {
+.postsContainer {
+  width: 60vw;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .postsContainer {
+    width: 80vw;
+  }
 }

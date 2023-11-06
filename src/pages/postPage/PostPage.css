@@ -1,25 +1,42 @@
 .postPage {
-  width: 50vw;
+  width: 70vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dateCategory {
+  font-size: larger;
+  opacity: 80%;
+}
+
+.postPageImg {
+  width: 70vw;
+  height: 500px;
+  object-fit: contain;
   margin: 50px auto;
 }
 
-.category {
-  color: rgb(16, 16, 167);
-  font-weight: 600;
+.postPageTitle {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 10px 0;
 }
 
-.postPage .title {
-  margin: 20px 0;
-  font-size: 3rem;
-}
-
-.postPage .body {
+.postPageBody {
   font-size: 1.5rem;
+  margin: 40px 0;
+  font-weight: 300;
   line-height: 40px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   .postPage {
-    width: 80vw;
+    width: 90vw;
+  }
+  .postPageImg {
+    width: 90vw;
+    height: 400px;
   }
 }

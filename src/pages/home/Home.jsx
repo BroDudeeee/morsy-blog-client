@@ -7,7 +7,9 @@ const Home = () => {
   return (
     <div className="home">
       <Header />
-      <Posts />
+      <section className="postsContainer">
+        <Posts />
+      </section>
     </div>
   );
 };

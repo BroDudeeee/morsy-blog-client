@@ -1,42 +1,28 @@
-// import Home from "./pages/home/Home";
-// import "./index.css";
-// import { Route, Routes } from "react-router-dom";
-// import PostPage from "./pages/postPage/PostPage";
-// import About from "./pages/about/About";
+import Home from "./pages/home/Home";
+import "./index.css";
+import { Route, Routes } from "react-router-dom";
+import PostPage from "./pages/postPage/PostPage";
+import About from "./pages/about/About";
+import { createContext, useState } from "react";
 
-// function App() {
-//   return (
-//     <main className="app">
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/post/:postId" element={<PostPage />} />
-//         <Route path="/about" element={<About />} />
-//       </Routes>
-//     </main>
-//   );
-// }
+export const ColorContext = createContext();
 
-// export default App;
+function App() {
+  const mode = localStorage.getItem("mode");
 
-import React, { useState } from "react";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css"; // Import Quill styles
-
-export default function App() {
-  const [editorValue, setEditorValue] = useState("");
+  const [isDark, setIsDark] = useState(mode === "dark" || false);
 
   return (
-    <ReactQuill
-      value={editorValue}
-      onChange={(value) => setEditorValue(value)}
-      modules={{
-        toolbar: [
-          [{ header: [1, 2, false] }],
-          ["bold", "italic", "underline"],
-          ["image", "code-block"],
-        ],
-      }}
-      theme="snow"
-    />
+    <ColorContext.Provider value={{ isDark, setIsDark }}>
+      <main className={`app ${isDark ? "dark" : "light"}`}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/post/:postId" element={<PostPage />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </main>
+    </ColorContext.Provider>
   );
 }
+
+export default App;
