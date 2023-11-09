@@ -33,7 +33,7 @@ const PostPage = () => {
       setIsLoading(false);
     };
     getPost();
-  }, [postId]);
+  }, []);
 
   if (isLoading)
     return (
