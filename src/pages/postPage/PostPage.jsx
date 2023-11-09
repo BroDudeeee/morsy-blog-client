@@ -17,6 +17,7 @@ const PostPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     const getPost = async () => {
       const res = await axios.get(
         `${import.meta.env.VITE_SERVER_URL}api/posts/post/${postId}`
