@@ -6,6 +6,15 @@
   justify-content: center;
 }
 
+.ql-syntax {
+  background-color: rgb(226, 223, 223);
+  color: #000;
+  max-height: 450px;
+  overflow: scroll;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 .dateCategory {
   font-size: larger;
   opacity: 80%;
