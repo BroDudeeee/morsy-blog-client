@@ -17,7 +17,6 @@ const PostPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
     const getPost = async () => {
       const res = await axios.get(
         `${import.meta.env.VITE_SERVER_URL}api/posts/post/${postId}`
@@ -34,7 +33,17 @@ const PostPage = () => {
       setIsLoading(false);
     };
     getPost();
-  }, []);
+  }, [postId]);
+
+  function arrayBufferToBase64(buffer) {
+    let binary = "";
+    const bytes = new Uint8Array(buffer);
+    const len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+      binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(binary);
+  }
 
   if (isLoading)
     return (
@@ -42,7 +51,7 @@ const PostPage = () => {
         <h3>Loading...</h3>
       </div>
     );
-  console.log(post);
+
   return (
     <>
       <Header />
@@ -58,7 +67,13 @@ const PostPage = () => {
           )}
         </section>
         <h3 className="postPageTitle">{post.title}</h3>
-        <img src={post.image} alt={post.title} className="postPageImg" />
+        <img
+          src={`data:${post.image.contentType};base64,${arrayBufferToBase64(
+            post.image.data.data
+          )}`}
+          alt={post.title}
+          className="postPageImg"
+        />
         <p
           className="postPageBody"
           dangerouslySetInnerHTML={{ __html: post.body }}
