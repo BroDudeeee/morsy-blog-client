@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import SinglePost from "../singlePost/SinglePost";
 import "./Posts.css";
+import loadingImg from "../../assets/loading.svg";
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -25,7 +26,7 @@ const Posts = () => {
     if (isLoading)
       return (
         <div className="loading">
-          <h3>Loading...</h3>
+          <img src={loadingImg} alt="Loading" className="loadingImg posts" />
         </div>
       );
   }
