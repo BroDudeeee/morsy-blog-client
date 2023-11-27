@@ -9,11 +9,17 @@
   margin: 20px auto 0 auto;
 }
 
+
 .loading {
   height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
   font-family: "Courier New", Courier, monospace;
 }
+
+.loadingImg {
+  width: 100px;
+  height: 100px;
+}
+
