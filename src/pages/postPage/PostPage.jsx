@@ -4,6 +4,7 @@ import "./PostPage.css";
 import { useParams } from "react-router-dom";
 import moment from "moment";
 import Header from "../../components/header/Header";
+import loadingImg from "../../assets/loading.svg";
 
 const PostPage = () => {
   const { postId } = useParams();
