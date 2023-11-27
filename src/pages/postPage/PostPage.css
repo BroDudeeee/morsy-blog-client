@@ -51,3 +51,16 @@
     height: 400px;
   }
 }
+
+.loading.postPage {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.loadingImg {
+  width: 100px;
+  height: 100px;
+}
