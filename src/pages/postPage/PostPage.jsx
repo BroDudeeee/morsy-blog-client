@@ -49,7 +49,7 @@ const PostPage = () => {
   if (isLoading)
     return (
       <div className="loading">
-        <h3>Loading...</h3>
+        <img src={loadingImg} alt="Loading" className="loadingImg postPage" />
       </div>
     );
 
